@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0f">
+<title>POV Lyhorng — Software Engineer · EV Charging · Utility Billing · Payments · AI</title>
+<meta name="description" content="Freelance Software Engineer specializing in EV charging infrastructure (OCPP/OCPI), utility billing systems, payment integrations, and AI/prompt engineering.">
+
+<!-- Social share (Open Graph + Twitter). URLs point to the GitHub Pages address;
+     update them if you later move to a custom domain. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="POV Lyhorng — Software Engineer · EV Charging · Utility Billing · Payments · AI">
+<meta property="og:description" content="Freelance Software Engineer specializing in EV charging infrastructure (OCPP/OCPI), utility billing systems, payment integrations, and AI/prompt engineering.">
+<meta property="og:image" content="https://lyhorng69.github.io/profile.me/assets/profile.jpg">
+<meta property="og:url" content="https://lyhorng69.github.io/profile.me/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="POV Lyhorng — Software Engineer · EV Charging · Utility Billing · Payments · AI">
+<meta name="twitter:description" content="Freelance Software Engineer · EV charging, utility billing, payments, and AI integration.">
+<meta name="twitter:image" content="https://lyhorng69.github.io/profile.me/assets/profile.jpg">
+
+<!-- Inline SVG favicon (mint dot, matches --accent) — no extra file needed -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2300d4aa'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<script>
+  // Apply saved theme before first paint to prevent flash
+  (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)})();
+</script>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-soft: #11111a;
+    --bg-card: #14141f;
+    --line: #1f1f2e;
+    --line-bright: #2a2a3d;
+    --text: #e8e8ed;
+    --text-dim: #9999a8;
+    --text-muted: #6b6b7a;
+    --accent: #00d4aa;
+    --accent-glow: rgba(0, 212, 170, 0.15);
+    --accent-bright: rgba(0, 212, 170, 0.3);
+    --serif: 'IBM Plex Serif', Georgia, serif;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', 'SF Mono', monospace;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --nav-bg: rgba(10, 10, 15, 0.7);
+    --mobile-menu-bg: rgba(10, 10, 15, 0.98);
+  }
+
+  /* Light theme — auto via system preference */
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f8f8fc;
+      --bg-soft: #eeeef6;
+      --bg-card: #e4e4ef;
+      --line: #d4d4e0;
+      --line-bright: #b8b8c8;
+      --text: #1a1a2e;
+      --text-dim: #4a4a60;
+      --text-muted: #7a7a92;
+      --accent: #009e80;
+      --accent-glow: rgba(0, 158, 128, 0.12);
+      --accent-bright: rgba(0, 158, 128, 0.22);
+      --nav-bg: rgba(248, 248, 252, 0.85);
+      --mobile-menu-bg: rgba(248, 248, 252, 0.98);
+    }
+  }
+
+  /* Light theme — manual toggle override */
+  :root[data-theme="light"] {
+    --bg: #f8f8fc;
+    --bg-soft: #eeeef6;
+    --bg-card: #e4e4ef;
+    --line: #d4d4e0;
+    --line-bright: #b8b8c8;
+    --text: #1a1a2e;
+    --text-dim: #4a4a60;
+    --text-muted: #7a7a92;
+    --accent: #009e80;
+    --accent-glow: rgba(0, 158, 128, 0.12);
+    --accent-bright: rgba(0, 158, 128, 0.22);
+    --nav-bg: rgba(248, 248, 252, 0.85);
+    --mobile-menu-bg: rgba(248, 248, 252, 0.98);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === SCROLL PROGRESS BAR === */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), #4d9fff);
+    z-index: 200;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+  /* === BACKGROUND === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.4;
+    z-index: -2;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 70%);
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+    animation: float 12s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-50px, 50px); }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* === NAVIGATION === */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: padding 0.3s var(--ease-out);
+  }
+  nav.scrolled { padding: 0.85rem 0; }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .logo {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .logo:hover { opacity: 0.7; }
+  .logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: var(--mono);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s var(--ease-out);
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: relative;
+  }
+  .pulse::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+    animation: pulse-ring 2s infinite;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.5); opacity: 0.7; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  /* === THEME TOGGLE === */
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--line-bright);
+    border-radius: 6px;
+    padding: 0.45rem;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    transition: border-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+    color: var(--text-dim);
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  }
+  /* Dark mode (default): moon visible, sun hidden */
+  .theme-toggle .icon-moon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  .theme-toggle .icon-sun {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(0.5);
+  }
+
+  /* Light mode — swap icons with crossfade + rotation */
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .theme-toggle .icon-moon {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+    }
+    :root:not([data-theme="dark"]) .theme-toggle .icon-sun {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+  }
+  :root[data-theme="light"] .theme-toggle .icon-moon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+  }
+  :root[data-theme="light"] .theme-toggle .icon-sun {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  /* Force dark mode override */
+  :root[data-theme="dark"] .theme-toggle .icon-moon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  :root[data-theme="dark"] .theme-toggle .icon-sun {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(0.5);
+  }
+
+  /* Theme color transition — only during toggle, never on page load */
+  html.theme-switching,
+  html.theme-switching *,
+  html.theme-switching *::before,
+  html.theme-switching *::after {
+    transition: background-color 0.6s var(--ease-out),
+                color 0.5s var(--ease-out) 0.05s,
+                border-color 0.5s var(--ease-out),
+                box-shadow 0.5s var(--ease-out),
+                background 0.6s var(--ease-out),
+                fill 0.5s var(--ease-out),
+                stroke 0.5s var(--ease-out) !important;
+  }
+  /* Keep icon animation smooth during theme switch */
+  html.theme-switching .theme-toggle svg {
+    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out) !important;
+  }
+
+  /* === MOBILE MENU === */
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line-bright);
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .menu-toggle:hover { border-color: var(--accent); }
+  .menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--text);
+    margin: 4px auto;
+    transition: all 0.3s var(--ease-out);
+    transform-origin: center;
+  }
+  .menu-toggle.active span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .menu-toggle.active span:nth-child(2) { opacity: 0; }
+  .menu-toggle.active span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--mobile-menu-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease-out);
+  }
+  .mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-menu a {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  .mobile-menu.active a {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .mobile-menu.active a:nth-child(1) { transition: all 0.5s 0.1s var(--ease-out); }
+  .mobile-menu.active a:nth-child(2) { transition: all 0.5s 0.15s var(--ease-out); }
+  .mobile-menu.active a:nth-child(3) { transition: all 0.5s 0.2s var(--ease-out); }
+  .mobile-menu.active a:nth-child(4) { transition: all 0.5s 0.25s var(--ease-out); }
+  .mobile-menu.active a:nth-child(5) { transition: all 0.5s 0.3s var(--ease-out); }
+  .mobile-menu a:hover { color: var(--accent); }
+
+  /* === HERO BADGE (Floating Corner) === */
+  .hero-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 0.95rem 0.5rem 0.6rem;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 170, 0.1) 0%,
+      rgba(77, 159, 255, 0.06) 100%
+    );
+    border: 1px solid var(--line-bright);
+    border-radius: 100px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: border-color 0.3s var(--ease-out), background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+    opacity: 0;
+    animation: fadeUp 0.6s 1.8s forwards;
+    overflow: hidden;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .hero-badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(0, 212, 170, 0.12) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    animation: badge-shimmer 5s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+  @keyframes badge-shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    20%, 80% { transform: translateX(100%); }
+  }
+  .hero-badge .badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 0.6rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.02em;
+  }
+  .hero-badge .badge-text {
+    position: relative;
+    z-index: 1;
+    color: var(--text);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .hero-badge .badge-divider {
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge .badge-meta {
+    color: var(--accent);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  .hero-badge:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 170, 0.18) 0%,
+      rgba(77, 159, 255, 0.1) 100%
+    );
+  }
+
+  /* === HEADLINE TYPEWRITER === */
+  .typewriter {
+    color: var(--accent);
+    font-style: italic;
+    position: relative;
+    display: inline;
+    min-height: 1.1em;
+  }
+  .typewriter::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 0.8em;
+    background: var(--accent);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: cursor-blink 0.8s steps(2) infinite;
+    transform: translateY(-2px);
+  }
+  .typewriter-word {
+    border-bottom: 0.08em solid rgba(0, 212, 170, 0.3);
+  }
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
+  /* Hide native em underline animation when using typewriter */
+  .hero h1 em.no-underline::after { display: none; }
+
+  /* === HERO === */
+  .hero {
+    padding: 4rem 0;
+    position: relative;
+    /* Fills viewport on initial load; JS locks height after that so
+       it doesn't re-stretch when scrolling back up later */
+    min-height: var(--hero-height, calc(100vh - 73px));
+    display: flex;
+    align-items: center;
+  }
+  .hero-avatar {
+    display: block;
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: visible;
+    margin-bottom: 1.75rem;
+    position: relative;
+    transition: transform 0.3s var(--ease-out);
+    opacity: 0;
+    animation: fadeUp 0.6s 0.05s forwards;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  .hero-avatar .avatar-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--line-bright);
+    transition: border-color 0.3s var(--ease-out);
+    background: var(--bg-soft);
+  }
+  .hero-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 var(--accent-bright); }
+    50% { box-shadow: 0 0 0 6px transparent; }
+  }
+  .hero-avatar:hover { transform: scale(1.05); }
+  .hero-avatar:hover .avatar-frame { border-color: var(--accent); }
+  .hero-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+    transition: transform 0.5s var(--ease-out);
+  }
+  .hero-avatar:hover img {
+    transform: scale(1.1);
+  }
+  .hero-meta {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+  .hero-meta::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.25rem, 6vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+  }
+  .hero h1 .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: wordReveal 0.8s var(--ease-out) forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    position: relative;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 0.05em;
+    left: 0;
+    right: 0;
+    height: 0.08em;
+    background: var(--accent);
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: lineReveal 1s 1.2s var(--ease-out) forwards;
+  }
+  @keyframes lineReveal {
+    to { transform: scaleX(1); }
+  }
+  @keyframes wordReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tagline {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--text-dim);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.4s forwards;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.6s forwards;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s var(--ease-out);
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s var(--ease-out);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--accent-bright);
+  }
+  .btn-primary:hover::before { transform: translateX(100%); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line-bright);
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .btn .arrow {
+    transition: transform 0.3s var(--ease-spring);
+  }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === SCROLL INDICATOR === */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s 2s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    pointer-events: none;
+  }
+  .scroll-indicator::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scroll-line 2.5s ease-in-out infinite;
+  }
+  @keyframes scroll-line {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: 6rem 0;
+    position: relative;
+  }
+  .section-header {
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .section-number {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .section-subtitle {
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+    flex-basis: 100%;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    max-width: 720px;
+  }
+
+  /* Reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  }
+  .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+  .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+  .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
+
+  /* === SERVICES === */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .service-card {
+    background: var(--bg-soft);
+    padding: 2.5rem 2rem;
+    transition: background 0.4s var(--ease-out);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.5s var(--ease-out);
+  }
+  .service-card:hover {
+    background: var(--bg-card);
+  }
+  .service-card:hover::before { width: 100%; }
+  .service-card .num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .service-card h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+  .service-card:hover h3 { color: var(--accent); }
+  .service-card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+  .service-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    background: var(--bg);
+    border: 1px solid var(--line-bright);
+    color: var(--text-dim);
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .tag.tag-accent {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* === PROJECTS === */
+  .project {
+    border-top: 1px solid var(--line);
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    transition: padding-left 0.4s var(--ease-out);
+    position: relative;
+  }
+  .project::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    bottom: 3rem;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s var(--ease-out);
+  }
+  .project:hover { padding-left: 1.5rem; }
+  .project:hover::before { transform: scaleY(1); }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project-meta {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .project-meta .year {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .project h3 {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    transition: color 0.3s;
+  }
+  .project:hover h3 { color: var(--accent); }
+  .project .project-domain {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .project p {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    max-width: 720px;
+  }
+  .project-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .project-highlights {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+  .project-highlights li {
+    color: var(--text-dim);
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    transition: color 0.3s, padding-left 0.3s;
+  }
+  .project-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+    transition: transform 0.3s;
+  }
+  .project-highlights li:hover {
+    color: var(--text);
+    padding-left: 1.75rem;
+  }
+  .project-highlights li:hover::before { transform: translateX(3px); }
+
+  /* === STACK === */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem 2rem;
+    align-items: start;
+  }
+  .stack-category h4 {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .stack-list {
+    list-style: none;
+  }
+  .stack-list li {
+    padding: 0.6rem 0;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    transition: padding-left 0.3s, color 0.3s;
+  }
+  .stack-list li::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: transform 0.3s var(--ease-spring), opacity 0.3s;
+  }
+  .stack-list li:hover {
+    color: var(--accent);
+    padding-left: 0.4rem;
+  }
+  .stack-list li:hover::after {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+
+  /* === PROCESS === */
+  .process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+  .process-step {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--line);
+    position: relative;
+    transition: background 0.3s;
+  }
+  .process-step:hover { background: var(--bg-soft); }
+  .process-step:last-child { border-right: none; }
+  .process-step .step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 3rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: transform 0.4s var(--ease-spring);
+  }
+  .process-step:hover .step-num { transform: translateX(4px) scale(1.05); }
+  .process-step h4 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .process-step p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* === CONTACT === */
+  .contact {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 50%, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    animation: glow-shift 8s ease-in-out infinite;
+  }
+  @keyframes glow-shift {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+  }
+  .contact-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .contact h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact h2 em { color: var(--accent); }
+  .contact-email {
+    display: inline-block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.25rem, 3vw, 2.2rem);
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    word-break: break-word;
+  }
+  .contact-email:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .contact-meta {
+    margin-top: 2rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  /* === FOOTER === */
+  footer {
+    padding: 3rem 0 2rem;
+    border-top: 1px solid var(--line);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: var(--mono);
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* === MOBILE BREAKPOINTS === */
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stack-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .availability { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 1.25rem; }
+    nav { padding: 1rem 0; }
+    .hero {
+      padding: 2.5rem 0;
+      min-height: var(--hero-height, calc(100vh - 65px));
+    }
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-avatar::after {
+      width: 14px;
+      height: 14px;
+      bottom: 2px;
+      right: 2px;
+    }
+    .hero-badge {
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.6rem;
+      padding: 0.35rem 0.7rem 0.35rem 0.4rem;
+      gap: 0.4rem;
+    }
+    .hero-badge .badge-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 0.5rem;
+    }
+    .hero-badge .badge-divider,
+    .hero-badge .badge-meta {
+      display: none;
+    }
+    .scroll-indicator { display: none; }
+    .hero-meta { margin-bottom: 1.5rem; font-size: 0.8rem; }
+    .hero-meta::before { width: 24px; }
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero-tagline { margin-bottom: 2rem; }
+    .hero-cta { width: 100%; }
+    .btn {
+      flex: 1;
+      justify-content: center;
+      padding: 1rem 1.25rem;
+      font-size: 0.8rem;
+    }
+    section { padding: 4rem 0; }
+    .section-header {
+      margin-bottom: 2.5rem;
+      gap: 1rem;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-card { padding: 2rem 1.5rem; }
+    .project {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+    .project-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .project-meta .year {
+      display: inline-block;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+    .project:hover { padding-left: 0; }
+    .project::before { display: none; }
+    .process { grid-template-columns: 1fr; }
+    .process-step {
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+      padding: 2rem 1.5rem;
+    }
+    .process-step:last-child { border-bottom: none; }
+    .stack-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .contact { padding: 4rem 0; }
+    .contact-meta {
+      gap: 0.5rem;
+      flex-direction: column;
+    }
+    .contact-meta span:nth-child(even) { display: none; }
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .container { padding: 0 1rem; }
+    .hero-cta { flex-direction: column; }
+    .btn { width: 100%; }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    body::after { animation: none; }
+    .hero h1 .word { opacity: 1; transform: none; }
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* Touch-friendly hover states */
+  @media (hover: none) {
+    .service-card:hover { background: var(--bg-soft); }
+    .project:hover { padding-left: 0; }
+    .project:hover::before { transform: scaleY(0); }
+    .project:hover h3 { color: inherit; }
+    .service-card:hover h3 { color: inherit; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav id="nav">
+  <div class="container">
+    <a href="#" class="logo">POV<span>.</span>LYHORNG</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="availability">
+      <span class="pulse"></span>
+      <span>Available</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#work">Work</a>
+  <a href="#stack">Stack</a>
+  <a href="#process">Process</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<header class="hero">
+  <a href="#contact" class="hero-badge" aria-label="AI-augmented engineering">
+    <span class="badge-icon">AI</span>
+    <span class="badge-text">AI-Era Engineer</span>
+    <span class="badge-divider">·</span>
+    <span class="badge-meta">Prompt + Code</span>
+  </a>
+  <div class="container">
+    <a href="#" class="hero-avatar" aria-label="POV Lyhorng">
+      <span class="avatar-frame">
+        <img src="assets/profile.jpg" alt="POV Lyhorng" loading="eager">
+      </span>
+    </a>
+    <div class="hero-meta">
+      <span>Software Engineer · Phnom Penh, Cambodia</span>
+    </div>
+    <h1>
+      <span class="word" style="animation-delay: 0.2s">I</span>
+      <span class="word" style="animation-delay: 0.25s">build</span>
+      <span class="word typewriter-wrap" style="animation-delay: 0.3s">
+        <span class="typewriter" id="typewriter" aria-live="polite"></span>
+      </span><br>
+      <span class="word" style="animation-delay: 0.4s">for the </span>
+      <span class="word" style="animation-delay: 0.45s"><em class="no-underline">energy</em></span>
+      <span class="word" style="animation-delay: 0.5s">&nbsp;and</span>
+      <span class="word" style="animation-delay: 0.55s"><em class="no-underline">EV mobility</em></span>
+      <span class="word" style="animation-delay: 0.6s">sectors.</span>
+    </h1>
+    <p class="hero-tagline">
+      Freelance backend engineer with 8+ years shipping production systems for the energy and EV mobility sectors. OCPP/OCPI protocols, multi-PSP payment integrations, microservices on Kubernetes. Project-based engagements with fixed scope and price.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">
+        Start a project <span class="arrow">→</span>
+      </a>
+      <a href="#work" class="btn btn-secondary">
+        See selected work
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>Scroll</span>
+  </div>
+</header>
+
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number">01 / SERVICES</span>
+      <h2 class="section-title">What I build</h2>
+      <p class="section-subtitle">
+        Six focused offerings, each backed by production work I've already shipped. No "full-stack generalist" pitch — these are the things I do well.
+      </p>
+    </div>
+
+    <div class="services-grid reveal-stagger">
+
+      <div class="service-card">
+        <span class="num">/ 01</span>
+        <h3>EV Charging Platforms</h3>
+        <p>OCPP-compliant CSMS, OCPI roaming integrations, real-time session orchestration, and driver-facing mobile apps. From greenfield builds to audits of existing systems.</p>
+        <div class="service-tags">
+          <span class="tag tag-accent">OCPP 1.6 / 2.0.1</span>
+          <span class="tag tag-accent">OCPI 2.2</span>
+          <span class="tag">CSMS</span>
+          <span class="tag">WebSockets</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="num">/ 02</span>
+        <h3>Utility Billing Systems</h3>
+        <p>End-to-end billing engines for electric distribution: metering integration, tariff structures, invoice generation, debt management, and reconciliation with regulatory systems.</p>
+        <div class="service-tags">
+          <span class="tag">Tariff engines</span>
+          <span class="tag">Reconciliation</span>
+          <span class="tag">ERP integration</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="num">/ 03</span>
+        <h3>Payment Integration</h3>
+        <p>Multi-PSP integrations, KHQR, bank Open APIs, fee engines, and PCI-aware transaction flows. Built for high-volume environments with proper reconciliation.</p>
+        <div class="service-tags">
+          <span class="tag">Stripe / Adyen</span>
+          <span class="tag">KHQR</span>
+          <span class="tag">Bank APIs</span>
+          <span class="tag">SOAP / REST</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="num">/ 04</span>
+        <h3>AI & Prompt Engineering</h3>
+        <p>LLM integrations, prompt engineering, RAG pipelines, and AI-powered features inside production backends. From OpenAI/Anthropic API integration to custom agent workflows.</p>
+        <div class="service-tags">
+          <span class="tag tag-accent">OpenAI</span>
+          <span class="tag tag-accent">Claude</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Agents</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="num">/ 05</span>
+        <h3>Backend Architecture</h3>
+        <p>Microservices on Kubernetes, system modernization, and architecture reviews. For teams that need a second opinion before scaling — or a senior engineer to lead the rebuild.</p>
+        <div class="service-tags">
+          <span class="tag">Microservices</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Event-driven</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="num">/ 06</span>
+        <h3>Mobile Development</h3>
+        <p>Cross-platform mobile apps with React Native (Expo). Driver apps, fintech apps, customer-facing utility apps. Full-cycle from architecture to App Store / Play Store deployment.</p>
+        <div class="service-tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">iOS / Android</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number">02 / SELECTED WORK</span>
+      <h2 class="section-title">Things I've shipped</h2>
+      <p class="section-subtitle">
+        A selection of production projects across EV charging, utility billing, fintech, and AI integrations — both at OONE Power Technology and as a freelancer.
+      </p>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-meta">
+        <span class="year">2024</span>
+        <span>Senior Software Engineer<br>OONE Power Technology</span>
+      </div>
+      <div>
+        <div class="project-domain">EV Charging · Mobility</div>
+        <h3>Nationwide EV Charging Platform</h3>
+        <p>End-to-end delivery of a production EV charging ecosystem spanning the country. Built the OCPP-compliant Central System, OCPI hub integration for roaming, the microservices backend on Kubernetes, and the consumer mobile app for drivers.</p>
+        <ul class="project-highlights">
+          <li>OCPP 1.6 / 2.0.1 CSMS handling concurrent sessions over WebSockets</li>
+          <li>OCPI 2.2 hub integration enabling cross-network roaming partnerships</li>
+          <li>Microservices on Kubernetes with event-driven architecture (RabbitMQ)</li>
+          <li>React Native (Expo) driver app: discovery, sessions, payments, history</li>
+        </ul>
+        <div class="project-stack">
+          <span class="tag">Node.js</span>
+          <span class="tag">NestJS</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">React Native</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-meta">
+        <span class="year">2022</span>
+        <span>Senior Software Engineer<br>OONE Power Technology</span>
+      </div>
+      <div>
+        <div class="project-domain">Fintech · Payments</div>
+        <h3>Payment Gateway with Open API & KHQR</h3>
+        <p>Engineered an Open API for bank integration and KHQR support for bill payments, then designed the fee management and transaction handling modules. Multi-biller integration with automated reconciliation across partner systems.</p>
+        <ul class="project-highlights">
+          <li>Bank Open API supporting REST and SOAP protocols</li>
+          <li>KHQR (Cambodia QR standard) integration for bill payments</li>
+          <li>Fee engine with configurable rules per biller and channel</li>
+          <li>Event-driven transaction processing with RabbitMQ</li>
+        </ul>
+        <div class="project-stack">
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">SOAP</span>
+          <span class="tag">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-meta">
+        <span class="year">2022</span>
+        <span>Freelance · Backend<br>Oct 2021 – Mar 2022</span>
+      </div>
+      <div>
+        <div class="project-domain">Freelance · Property · Billing</div>
+        <h3>Property Billing System</h3>
+        <p>Backend development for a property billing platform spanning multiple billing dimensions — tenants, properties, charges, and recurring billing cycles. Designed configurable charge and pricing rules to support varied billing structures across different property types.</p>
+        <ul class="project-highlights">
+          <li>Customer and property management modules with hierarchical relationships</li>
+          <li>Configurable charge & pricing engine for flexible billing rules</li>
+          <li>Recurring billing cycles with invoice generation and tracking</li>
+          <li>Reporting module for revenue, occupancy, and outstanding balances</li>
+        </ul>
+        <div class="project-stack">
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-meta">
+        <span class="year">2021</span>
+        <span>Freelance · Frontend<br>Dec 2020 – Apr 2021</span>
+      </div>
+      <div>
+        <div class="project-domain">Freelance · Retail · Inventory</div>
+        <h3>Sales & Stock Management System</h3>
+        <p>Frontend development for a complete sales and inventory platform covering products, customers, sales, purchases, and stock control. Built reusable component patterns and form workflows for transaction-heavy retail operations.</p>
+        <ul class="project-highlights">
+          <li>Product catalog management with categories and variants</li>
+          <li>Sales and purchase order workflows with line-item editing</li>
+          <li>Real-time stock tracking and movement history</li>
+          <li>Customer management with transaction history</li>
+        </ul>
+        <div class="project-stack">
+          <span class="tag">Angular</span>
+          <span class="tag">Ant Design</span>
+          <span class="tag">LESS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-meta">
+        <span class="year">2020</span>
+        <span>Software Developer<br>OONE Power Technology</span>
+      </div>
+      <div>
+        <div class="project-domain">Utility · Energy</div>
+        <h3>Billing System for Electricité du Cambodge (EDC)</h3>
+        <p>Delivered core billing modules for the national electricity utility — customer management, meter reading, billing, and offline payment processing — plus the citizen-facing public request service for connection requests and complaints.</p>
+        <ul class="project-highlights">
+          <li>Customer management and meter reading workflows</li>
+          <li>Invoice generation and offline payment processing</li>
+          <li>Custom WinForms controls and secure accounting module</li>
+          <li>Citizen-facing public request portal integrated with backend ERP</li>
+        </ul>
+        <div class="project-stack">
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">Redis</span>
+          <span class="tag">WinForms</span>
+          <span class="tag">Crystal Reports</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number">03 / STACK</span>
+      <h2 class="section-title">Technical stack</h2>
+      <p class="section-subtitle">
+        The tools I reach for. Polyglot across Node.js and .NET ecosystems.
+      </p>
+    </div>
+
+    <div class="stack-grid reveal-stagger">
+      <div class="stack-category">
+        <h4>Languages</h4>
+        <ul class="stack-list">
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>C#</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>Frameworks</h4>
+        <ul class="stack-list">
+          <li>Node.js</li>
+          <li>NestJS</li>
+          <li>Next.js</li>
+          <li>.NET Core</li>
+          <li>ASP.NET Core</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>Data & Messaging</h4>
+        <ul class="stack-list">
+          <li>PostgreSQL</li>
+          <li>SQL Server</li>
+          <li>MongoDB</li>
+          <li>Redis</li>
+          <li>RabbitMQ</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>Protocols & Real-time</h4>
+        <ul class="stack-list">
+          <li>OCPP 1.6 / 2.0.1</li>
+          <li>OCPI 2.2</li>
+          <li>WebSockets</li>
+          <li>REST / SOAP</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>AI & LLMs</h4>
+        <ul class="stack-list">
+          <li>OpenAI API</li>
+          <li>Claude API</li>
+          <li>Prompt Engineering</li>
+          <li>RAG Pipelines</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>Infrastructure</h4>
+        <ul class="stack-list">
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>CI/CD</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>Mobile & Frontend</h4>
+        <ul class="stack-list">
+          <li>React Native</li>
+          <li>Expo</li>
+          <li>Angular</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="stack-category">
+        <h4>Tools</h4>
+        <ul class="stack-list">
+          <li>Git</li>
+          <li>VS Code</li>
+          <li>Postman</li>
+          <li>Figma</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number">04 / PROCESS</span>
+      <h2 class="section-title">How I work</h2>
+      <p class="section-subtitle">
+        Project-based, fixed scope, fixed price. You know what you're paying for before we start.
+      </p>
+    </div>
+
+    <div class="process reveal-stagger">
+      <div class="process-step">
+        <div class="step-num">i</div>
+        <h4>Discovery</h4>
+        <p>A free 30–60 minute call to understand your goals, constraints, and the actual problem you need solved. No sales pitch — just whether we're a fit.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">ii</div>
+        <h4>Proposal</h4>
+        <p>A written proposal with clear scope, deliverables, milestones, timeline, and fixed price. You sign off before any code is written.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">iii</div>
+        <h4>Build</h4>
+        <p>Weekly progress updates. Working code at every milestone. Direct access to me — no account managers, no relay phone-tag.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">iv</div>
+        <h4>Handover</h4>
+        <p>Documentation, deployment, and knowledge transfer to your team. Optional follow-up support window included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-inner reveal">
+    <h2>Have a project in <em>mind?</em><br>Let's talk.</h2>
+    <p style="color: var(--text-dim); max-width: 580px; margin: 0 auto 2rem;">
+      If you're building or scaling an EV charging platform, utility billing system, payment integration, or AI-powered backend — and need someone who's actually shipped production systems — I'd love to hear about it.
+    </p>
+    <a href="mailto:lyhorng2.pov@gmail.com" class="contact-email">lyhorng2.pov@gmail.com</a>
+    <div class="contact-meta">
+      <span>+855 85 73 66 67</span>
+      <span>·</span>
+      <span>Phnom Penh, Cambodia (UTC+7)</span>
+      <span>·</span>
+      <span>Working remotely worldwide</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 POV LYHORNG · Software Engineer</div>
+    <div>Built with care · IBM Plex</div>
+  </div>
+</footer>
+
+<script>
+  // === Theme toggle ===
+  (function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    const toggle = document.getElementById('themeToggle');
+    const meta = document.querySelector('meta[name="theme-color"]');
+
+    function getEffectiveTheme() {
+      const attr = document.documentElement.getAttribute('data-theme');
+      if (attr) return attr;
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function updateMeta() {
+      if (meta) meta.content = getEffectiveTheme() === 'light' ? '#f8f8fc' : '#0a0a0f';
+    }
+    updateMeta();
+
+    toggle.addEventListener('click', () => {
+      const current = getEffectiveTheme();
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.add('theme-switching');
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateMeta();
+      // Remove transition class after animation completes
+      setTimeout(() => document.documentElement.classList.remove('theme-switching'), 650);
+    });
+
+    // Update if system preference changes while page is open
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+      if (!localStorage.getItem('theme')) updateMeta();
+    });
+  })();
+
+  // === Lock hero height on initial load ===
+  // Uses the viewport height at load time so the hero fills the screen on first view,
+  // but doesn't re-stretch on scroll-up later (when mobile URL bars hide/show).
+  (function lockHeroHeight() {
+    const navHeight = window.innerWidth <= 768 ? 65 : 73;
+    const heroHeight = window.innerHeight - navHeight;
+    document.documentElement.style.setProperty('--hero-height', heroHeight + 'px');
+  })();
+
+  // Recalculate on resize (debounced) — handles desktop window resizing
+  // and mobile orientation changes
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // Only update if the resize is significant (e.g., orientation change),
+      // not just mobile URL bar showing/hiding
+      const navHeight = window.innerWidth <= 768 ? 65 : 73;
+      const newHeight = window.innerHeight - navHeight;
+      const currentHeight = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--hero-height'));
+      if (Math.abs(newHeight - currentHeight) > 100) {
+        document.documentElement.style.setProperty('--hero-height', newHeight + 'px');
+      }
+    }, 250);
+  });
+
+  // === Typewriter rotating headline ===
+  (function typewriter() {
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+
+    const phrases = [
+      'EV charging platforms',
+      'utility billing systems',
+      'payment infrastructure',
+      'OCPP/OCPI integrations',
+      'AI-powered backends',
+      'LLM integrations'
+    ];
+
+    // Respect reduced-motion preference — show static text
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = phrases[0];
+      el.style.borderRight = 'none';
+      return;
+    }
+
+    const TYPE_SPEED = 70;     // ms per character when typing
+    const ERASE_SPEED = 35;    // ms per character when erasing
+    const HOLD_TIME = 1800;    // ms to hold full phrase before erasing
+    const PAUSE_BETWEEN = 400; // ms between erase and next type
+    const INITIAL_DELAY = 1200; // wait for hero entrance to settle
+
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let isErasing = false;
+
+    function tick() {
+      const phrase = phrases[phraseIdx];
+
+      if (!isErasing) {
+        // Typing
+        charIdx++;
+        el.textContent = phrase.substring(0, charIdx);
+        if (charIdx === phrase.length) {
+          isErasing = true;
+          setTimeout(tick, HOLD_TIME);
+          return;
+        }
+        setTimeout(tick, TYPE_SPEED + Math.random() * 40); // slight human variance
+      } else {
+        // Erasing
+        charIdx--;
+        el.textContent = phrase.substring(0, charIdx);
+        if (charIdx === 0) {
+          isErasing = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+          setTimeout(tick, PAUSE_BETWEEN);
+          return;
+        }
+        setTimeout(tick, ERASE_SPEED);
+      }
+    }
+
+    setTimeout(tick, INITIAL_DELAY);
+  })();
+
+  // === Scroll progress + nav compaction ===
+  const progressBar = document.getElementById('scrollProgress');
+  const nav = document.getElementById('nav');
+
+  function updateScroll() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+    if (scrollTop > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  updateScroll();
+
+  // === Mobile menu ===
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // === Reveal-on-scroll ===
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+    revealObserver.observe(el);
+  });
+</script>
+
+</body>
+</html>
