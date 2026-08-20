@@ -1091,13 +1091,22 @@
     gap: 2rem;
     flex-wrap: wrap;
   }
-  .contact-meta a {
+  .contact-links {
+    margin-top: 1.25rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .contact-links a {
     color: var(--text-muted);
     text-decoration: none;
     border-bottom: 1px solid var(--line-bright);
     transition: color 0.2s, border-color 0.2s;
   }
-  .contact-meta a:hover {
+  .contact-links a:hover {
     color: var(--accent);
     border-color: var(--accent);
   }
@@ -1225,6 +1234,7 @@
       flex-direction: column;
     }
     .contact-meta span:nth-child(even) { display: none; }
+    .contact-links { gap: 1.25rem; }
     footer .container {
       flex-direction: column;
       text-align: center;
@@ -1733,11 +1743,10 @@
       <span>Working remotely worldwide</span>
       <span>·</span>
       <span>English &amp; Khmer</span>
-      <span>·</span>
+    </div>
+    <div class="contact-links">
       <a href="https://github.com/lyhorng69" target="_blank" rel="me noopener">github.com/lyhorng69</a>
-      <span>·</span>
       <a href="https://www.linkedin.com/in/pov-lyhorng-429658154" target="_blank" rel="me noopener">LinkedIn</a>
-      <span>·</span>
       <a href="assets/POV-Lyhorng-CV.pdf">Download CV (PDF)</a>
     </div>
   </div>
