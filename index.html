@@ -890,6 +890,21 @@
   }
   .project-highlights li:hover::before { transform: translateX(3px); }
 
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .project-link:hover { border-color: var(--accent); }
+
   /* === STACK === */
   .stack-grid {
     display: grid;
@@ -972,6 +987,39 @@
     color: var(--text-dim);
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  /* === FAQ === */
+  .faq-list details { border-top: 1px solid var(--line); }
+  .faq-list details:last-child { border-bottom: 1px solid var(--line); }
+  .faq-list summary {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    padding: 1.4rem 2.5rem 1.4rem 0;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after {
+    content: '+';
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--mono);
+    font-size: 1.25rem;
+    color: var(--accent);
+    transition: transform 0.3s var(--ease-out);
+  }
+  .faq-list details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq-list summary:hover { color: var(--accent); }
+  .faq-list details p {
+    color: var(--text-dim);
+    padding: 0 0 1.5rem;
+    max-width: 680px;
+    font-size: 0.95rem;
   }
 
   /* === CONTACT === */
@@ -1410,6 +1458,7 @@
           <span class="tag">Kubernetes</span>
           <span class="tag">React Native</span>
         </div>
+        <a class="project-link" href="case-study-ev-charging.html">Read the case study <span aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -1629,6 +1678,37 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-number">05 / FAQ</span>
+      <h2 class="section-title">Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>How do engagements work?</summary>
+        <p>Every project starts with a free 30–60 minute discovery call. If we’re a fit, you get a written proposal with scope, deliverables, milestones, timeline, and a fixed price — you sign off before any code is written. During the build you get weekly updates and working code at every milestone.</p>
+      </details>
+      <details>
+        <summary>Who actually does the work?</summary>
+        <p>I do. No subcontractors, no account managers, no relay phone-tag — you talk directly to the engineer writing the code.</p>
+      </details>
+      <details>
+        <summary>What timezone overlap can I expect?</summary>
+        <p>I’m in Phnom Penh (UTC+7). My morning overlaps with East Asia and Australia, my afternoon with European mornings, and for the Americas I schedule calls in my evening. Async-first, with real-time overlap where it matters.</p>
+      </details>
+      <details>
+        <summary>Do you sign NDAs?</summary>
+        <p>Yes — happy to sign yours before we discuss specifics. Most of my production work is proprietary, so working under confidentiality is the norm, not the exception.</p>
+      </details>
+      <details>
+        <summary>What happens after handover?</summary>
+        <p>You get documentation, deployment, and knowledge transfer to your team, plus an optional follow-up support window. The goal is that your team owns the system — not that you depend on me forever.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="container contact-inner reveal">
     <h2>Building charging infrastructure, billing, or payments?<br><em>Let’s scope it.</em></h2>
@@ -1644,6 +1724,8 @@
       <span>Working remotely worldwide</span>
       <span>·</span>
       <a href="https://github.com/lyhorng69" target="_blank" rel="me noopener">github.com/lyhorng69</a>
+      <span>·</span>
+      <a href="assets/POV-Lyhorng-CV.pdf">Download CV (PDF)</a>
     </div>
   </div>
 </section>
@@ -1655,6 +1737,8 @@
       <a href="https://github.com/lyhorng69" target="_blank" rel="me noopener">GitHub</a>
       <span>·</span>
       <a href="mailto:lyhorng2.pov@gmail.com">Email</a>
+      <span>·</span>
+      <a href="assets/POV-Lyhorng-CV.pdf">CV</a>
     </div>
     <div>Built with care · IBM Plex</div>
   </div>

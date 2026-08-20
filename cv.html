@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POV Lyhorng — CV</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1a1a2e;
+    --dim: #4a4a60;
+    --muted: #6a6a82;
+    --accent: #007a64;
+    --line: #d4d4e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 14mm 16mm; }
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 10.5px;
+    line-height: 1.55;
+    color: var(--text);
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  @media print { body { max-width: none; padding: 0; } }
+
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 14px; margin-bottom: 16px; }
+  h1 { font-family: 'IBM Plex Serif', Georgia, serif; font-weight: 400; font-size: 26px; letter-spacing: -0.02em; }
+  .role { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); font-weight: 600; margin: 4px 0 8px; }
+  .contact { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .contact a { color: var(--muted); text-decoration: none; }
+
+  h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); border-bottom: 1px solid var(--line);
+    padding-bottom: 4px; margin: 16px 0 8px;
+  }
+  .summary { color: var(--dim); }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
+  .skills div { color: var(--dim); }
+  .skills b { color: var(--text); font-weight: 600; }
+
+  .job { margin-bottom: 12px; page-break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  h3 { font-family: 'IBM Plex Serif', Georgia, serif; font-weight: 400; font-size: 14px; }
+  .where { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: var(--muted); white-space: nowrap; }
+  .job ul { margin: 4px 0 0 14px; color: var(--dim); }
+  .job li { margin-bottom: 1px; }
+  .job .tech { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); margin-top: 3px; }
+
+  .foot { margin-top: 14px; padding-top: 8px; border-top: 1px solid var(--line); font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>POV Lyhorng</h1>
+  <div class="role">Software Engineer — EV Charging · Utility Billing · Payments</div>
+  <div class="contact">Phnom Penh, Cambodia (UTC+7) · +855 85 73 66 67 · <a href="mailto:lyhorng2.pov@gmail.com">lyhorng2.pov@gmail.com</a> · <a href="https://github.com/lyhorng69">github.com/lyhorng69</a> · <a href="https://lyhorng69.github.io/profile.me/">lyhorng69.github.io/profile.me</a></div>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">Backend engineer with 8+ years shipping production systems for the energy and EV mobility sectors: OCPP/OCPI-compliant charging platforms, utility billing engines, multi-PSP payment integrations (KHQR, bank Open APIs), and event-driven microservices on Kubernetes. Cross-platform mobile with React Native. Freelance, project-based engagements with fixed scope and price.</p>
+
+<h2>Core skills</h2>
+<div class="skills">
+  <div><b>Languages:</b> JavaScript, TypeScript, C#, SQL</div>
+  <div><b>Backend:</b> Node.js, NestJS, Next.js, .NET / ASP.NET Core</div>
+  <div><b>Data & messaging:</b> PostgreSQL, SQL Server, MongoDB, Redis, RabbitMQ</div>
+  <div><b>Protocols:</b> OCPP 1.6 / 2.0.1, OCPI 2.2, WebSockets, REST / SOAP</div>
+  <div><b>Infrastructure:</b> Docker, Kubernetes, CI/CD, Linux</div>
+  <div><b>Mobile & frontend:</b> React Native, Expo, Angular</div>
+  <div><b>AI & LLMs:</b> OpenAI API, Claude API, RAG pipelines</div>
+  <div><b>Payments:</b> KHQR, bank Open APIs, multi-PSP, fee engines</div>
+</div>
+
+<h2>Selected engagements</h2>
+
+<div class="job">
+  <div class="job-head"><h3>Nationwide EV Charging Platform</h3><div class="where">Senior Software Engineer · OONE Power Technology · 2024</div></div>
+  <ul>
+    <li>Built the OCPP 1.6 / 2.0.1 central system (CSMS) handling concurrent charging sessions over WebSockets, plus OCPI 2.2 hub integration for cross-network roaming.</li>
+    <li>Designed event-driven microservices on Kubernetes (RabbitMQ) decoupling telemetry, session lifecycle, and billing.</li>
+    <li>Delivered the React Native (Expo) driver app: station discovery, live sessions, payments, history.</li>
+  </ul>
+  <div class="tech">Node.js · NestJS · Next.js · PostgreSQL · MongoDB · Redis · RabbitMQ · Kubernetes · React Native</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Payment Gateway with Open API & KHQR</h3><div class="where">Senior Software Engineer · OONE Power Technology · 2022</div></div>
+  <ul>
+    <li>Engineered a bank-facing Open API (REST and SOAP) and KHQR integration for bill payments across multiple billers.</li>
+    <li>Designed the fee engine with configurable rules per biller and channel, with event-driven transaction processing and automated reconciliation.</li>
+  </ul>
+  <div class="tech">ASP.NET Core · PostgreSQL · Redis · RabbitMQ · SOAP · Docker</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Property Billing System</h3><div class="where">Freelance · Backend · Oct 2021 – Mar 2022</div></div>
+  <ul>
+    <li>Built customer/property management with hierarchical relationships and a configurable charge &amp; pricing engine for varied billing structures.</li>
+    <li>Implemented recurring billing cycles with invoice generation, tracking, and revenue/occupancy reporting.</li>
+  </ul>
+  <div class="tech">ASP.NET Core · SQL Server · Redis · Docker</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Sales & Stock Management System</h3><div class="where">Freelance · Frontend · Dec 2020 – Apr 2021</div></div>
+  <ul>
+    <li>Built the frontend for a full sales and inventory platform: product catalog with variants, order workflows with line-item editing, real-time stock tracking.</li>
+  </ul>
+  <div class="tech">Angular · Ant Design · LESS</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Billing System for Electricité du Cambodge (EDC)</h3><div class="where">Software Developer · OONE Power Technology · 2020</div></div>
+  <ul>
+    <li>Delivered core billing modules for the national electricity utility: customer management, meter reading, invoice generation, offline payment processing.</li>
+    <li>Built the citizen-facing public request portal (connection requests, complaints) integrated with the backend ERP.</li>
+  </ul>
+  <div class="tech">ASP.NET Core · SQL Server · Redis · WinForms · Crystal Reports</div>
+</div>
+
+<div class="foot">References and project metrics available on request · Full portfolio: lyhorng69.github.io/profile.me</div>
+
+</body>
+</html>
