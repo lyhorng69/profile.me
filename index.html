@@ -1247,6 +1247,25 @@
     .btn { width: 100%; }
   }
 
+  /* Short viewports: compress hero rhythm so the CTAs stay above the fold */
+  @media (max-height: 840px) {
+    .hero { padding: 2rem 0; }
+    .hero-avatar { width: 64px; height: 64px; margin-bottom: 1rem; }
+    .hero-avatar::after {
+      width: 13px;
+      height: 13px;
+      bottom: 1px;
+      right: 1px;
+    }
+    .hero-meta { margin-bottom: 1.25rem; }
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.75rem);
+      margin-bottom: 1.25rem;
+    }
+    .hero-tagline { margin-bottom: 1.75rem; }
+    .scroll-indicator { display: none; }
+  }
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
